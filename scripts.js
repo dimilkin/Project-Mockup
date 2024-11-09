@@ -9,15 +9,24 @@ function initializeDoughnutChart() {
         data: {
             datasets: [
                 {
-                    data: [30, 20, 50], // Values for each section
+                    data: [
+                        {procedure: 'Първичен Преглед', value: 10},
+                        {procedure: 'КОХ Почистване', value: 10},
+                        {procedure: 'Обтурация 14', value: 20},
+                        {procedure: 'Ендо 36', value: 40},
+                        {procedure: 'Изграждане 36', value: 20}
+                    ], // Values for each section
                     backgroundColor: ["#56c9ab", "#36a2eb", "#ff6384"], // Colors for the segments
-                    label: 'Протетичен етап',
-                    hoverLabels: ["Първичен Преглед", "КОХ Почистване", "Обтурация 14"] // Custom labels for hover
-                },
-                {
-                    data: [60, 10, 30],
-                    backgroundColor: ["#56c9ab", "#36a2eb", "#ff6384"],
                     label: 'Консервативен етап',
+                    hoverLabels: ["Първичен Преглед", "КОХ Почистване", "Обтурация 14", 'Ендо 36', 'Изграждане 36']                },
+                {
+                    data: [
+                        {procedure: 'Временна Коронка 36', value: 30},
+                        {procedure: 'Отпечатъци 36', value: 10},
+                        {procedure: 'Постоянна коронка 36', value: 60}
+                    ],
+                    backgroundColor: ["#56c9ab", "#36a2eb", "#ff6384"],
+                    label: 'Протетичен етап',
                     hoverLabels: ["Completed", "Current", "Upcoming"]
                 }
             ],
@@ -34,14 +43,19 @@ function initializeDoughnutChart() {
                 animateScale: true,
                 animateRotate: true
             },
-            callbacks: {
-                label: function(item, data) {
-                    // Fetch hoverLabels for the specific dataset
-                    const dataset = data.datasets[item.datasetIndex];
-                    const hoverLabels = dataset.hoverLabels;
-                    const customLabel = hoverLabels ? hoverLabels[item.index] : data.labels[item.index];
-                    // Display custom label only, without any numerical value
-                    return `${dataset.label}: ${customLabel}`;
+            parsing: {
+                key: 'value',
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: (context) => {
+                            const dataset = context.dataset;
+                            const hoverLabels = dataset.hoverLabels;
+                            const customLabel = hoverLabels ? hoverLabels[context.dataIndex] : context.label;
+                            return `${dataset.label}: ${customLabel}`;
+                        }
+                    }
                 }
             }
         }
