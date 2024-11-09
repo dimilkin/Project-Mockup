@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow Diagram</title>
+</head>
+<div>
+    <div class="context-holder" id="context">
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="diagram-container" id="diagram">
+            <canvas id="lineCanvas"></canvas>
+
+            <!-- Headers -->
+            <div class="header" style="grid-column: 1; grid-row: 1;">Д-р Румен Георгиев</div>
+            <div class="header" style="grid-column: 2; grid-row: 1;">Д-р Кристина Великова</div>
+            <div class="header" style="grid-column: 3; grid-row: 1;">Д-р Стефан Николов</div>
+
+            <!-- Nodes -->
+            <div class="node" style="grid-column: 2; grid-row: 2;">
+                <span>Първичен преглед</span>
+                <span> 01.02.2025</span>
+            </div>
+            <div class="node" style="grid-column: 1; grid-row: 3;">
+                <span> КОХ почистване </span>
+                <span> 03.02.2025 </span>
+            </div>
+            <div class="node" style="grid-column: 1; grid-row: 4;">
+                <span>Обтурация 14</span>
+                <span> 04.03.2025 </span>
+            </div>
+            <div class="node" style="grid-column: 3; grid-row: 5;">
+                <span>Ендо 36 ( 4 посещения)</span>
+                <span>08.03.2025</span>
+            </div>
+            <div class="node" style="grid-column: 2; grid-row: 6;">
+                <span>изграждане 36</span>
+                <span>24.03.2025</span>
+            </div>
+            <div class="node" style="grid-column: 2; grid-row: 8;">
+                <span>отпечатъци за корона 36</span>
+                <span>18.05.2025</span>
+            </div>
+            <div class="node" style="grid-column: 2; grid-row: 9;">
+                <span>постоянна корона 36</span>
+                <span>28.05.2025</span>
+            </div>
+            <div class="node" style="grid-column: 1; grid-row: 7;">
+                <span>врменна корона 36</span>
+                <span>28.03.2025</span>
+            </div>
+        </div>
+        <div class="procedures-table">
+            <div class="procedure-tab">
+                <div class="procedure-text">Първичен преглед</div>
+                <div class="procedure-text">50лв</div>
+            </div>
+            <div class="procedure-tab">
+                <div class="procedure-text">КОХ почистване</div>
+                <div class="procedure-text">100лв</div>
+            </div>
+            <div class="procedure-tab">
+                <div class="procedure-text">Обтурация 14</div>
+                <div class="procedure-text">150lv</div>
+            </div>
+            <div class="procedure-tab">
+                <div class="procedure-text">Ендо лечение 14</div>
+                <div class="procedure-text">150лв</div>
+            </div>
+            <div class="procedure-tab">
+                <div class="procedure-text">Изграждане 36</div>
+                <div class="procedure-text">100лв</div>
+            </div>
+            <div class="procedure-tab">
+                <div class="procedure-text">временна корона 36</div>
+                <div class="procedure-text">50лв</div>
+            </div>
+            <div class="procedure-tab">
+                <div class="procedure-text">отпечатъци 36</div>
+                <div class="procedure-text">не се заплащат отделно</div>
+            </div>
+            <div class="procedure-tab">
+                <div class="procedure-text">постоянна корона 36</div>
+                <div class="procedure-text">300lv</div>
+            </div>
+            <div class="procedure-tab">
+                <div class="procedure-text">Total : <b>900лв</b></div>
+            </div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+        <!--        <script src="doughnut.js" defer></script>-->
+        <script src="scripts.js" defer></script>
+    </div>
+</div>
+</html>

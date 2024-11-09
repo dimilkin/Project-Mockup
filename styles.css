@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    background: #4e4e4e;
+}
+
+.context-holder {
+    margin: 0 auto;
+    width: fit-content;
+    align-content: center;
+    align-items: center;
+}
+
+.chart-container {
+    margin-bottom: 16px;
+}
+
+.diagram-container {
+    display: grid;
+    grid-template-columns: repeat(3, 12vw);
+    grid-template-rows: repeat(8, 100px);
+    gap: 10px;
+    position: relative;
+    background: #2e2e2e;
+    width: fit-content;
+    border-radius: 20px;
+    padding: 12px;
+}
+
+.header {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 10px;
+    border-bottom: 1px solid #aaa;
+
+}
+
+.node {
+    display: flex;
+    flex-direction: column; /* Arrange children in a vertical column */
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between;
+    position: relative;
+    width: 10vw;
+    height: fit-content;
+    background-color: white;
+    color: #4e4e4e;
+    margin: auto;
+    z-index: 1;
+    padding: 8px;
+    border-style: solid;
+    border-color: goldenrod;
+    border-width: 2px;
+    border-radius: 12px;
+    align-content: center;
+}
+
+.node span {
+    text-align: center;
+    width: 100%;
+}
+
+#lineCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.node-content {
+    position: relative;
+    top: -15px;
+}
+
+.procedure-tab {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 36vw;
+    background-color: white;
+    color: #4e4e4e;
+    z-index: 1;
+    padding: 4px;
+    border-style: solid;
+    border-color: goldenrod;
+    border-width: 1px;
+    border-radius: 12px;
+}
+
+.procedure-text {
+    margin: 8px;
+    flex: 1; /* Makes all children take equal width */
+    text-align: center; /* Centers the text in each section */
+    padding: 0 5px;
+}
+
+@media (max-width: 780px) {
+    /* For mobile phones */
+    .diagram-container {
+        grid-template-columns: repeat(3, 30vw); /* Single column */
+        grid-template-rows: repeat(8, 80px); /* Stack nodes vertically */
+        gap: 20px;
+        width: 98vw; /* Full width for small screens */
+        align-items: baseline;
+    }
+
+    .header {
+        font-size: 14px; /* Smaller font for headers */
+    }
+
+    .node {
+        width: 20vw;
+        font-size: 18px;
+        max-width: 20vw;
+    }
+
+    .procedure-tab {
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        width: 90%;
+        background-color: white;
+        color: #4e4e4e;
+        z-index: 1;
+        padding: 4px;
+        border-style: solid;
+        border-color: goldenrod;
+        border-width: 1px;
+        border-radius: 12px;
+    }
+
+    .procedure-text {
+        margin: 1px;
+        flex: 1; /* Makes all children take equal width */
+        text-align: center; /* Centers the text in each section */
+        padding: 8px;
+        font-size: 18px;
+    }
+
+}
