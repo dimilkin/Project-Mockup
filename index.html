@@ -21,80 +21,150 @@
 
             <!-- Nodes -->
             <div class="node" style="grid-column: 2; grid-row: 2;">
-                <span>Първичен преглед</span>
-                <span> 01.02.2025</span>
+                <span class="node-procedure-name">Първичен преглед</span>
+                <span class="node-procedure-date"> 01.02.2025</span>
             </div>
             <div class="node" style="grid-column: 1; grid-row: 3;">
-                <span> КОХ почистване </span>
-                <span> 03.02.2025 </span>
+                <span class="node-procedure-name"> КОХ почистване </span>
+                <span class="node-procedure-date"> 03.02.2025 </span>
             </div>
             <div class="node" style="grid-column: 1; grid-row: 4;">
-                <span>Обтурация 14</span>
-                <span> 04.03.2025 </span>
+                <span class="node-procedure-name">Обтурация 14</span>
+                <span class="node-procedure-date"> 04.03.2025 </span>
             </div>
             <div class="node" style="grid-column: 3; grid-row: 5;">
-                <span>Ендо 36 ( 4 посещения)</span>
-                <span>08.03.2025</span>
+                <span class="node-procedure-name">Ендо 36 ( 4 посещения)</span>
+                <span class="node-procedure-date">08.03.2025</span>
             </div>
             <div class="node" style="grid-column: 2; grid-row: 6;">
-                <span>изграждане 36</span>
-                <span>24.03.2025</span>
+                <span class="node-procedure-name">изграждане 36</span>
+                <span class="node-procedure-date">24.03.2025</span>
             </div>
             <div class="node" style="grid-column: 2; grid-row: 8;">
-                <span>отпечатъци за корона 36</span>
-                <span>18.05.2025</span>
+                <span class="node-procedure-name">отпечатъци за корона 36</span>
+                <span class="node-procedure-date">18.05.2025</span>
             </div>
             <div class="node" style="grid-column: 2; grid-row: 9;">
-                <span>постоянна корона 36</span>
-                <span>28.05.2025</span>
+                <span class="node-procedure-name">постоянна корона 36</span>
+                <span class="node-procedure-date">28.05.2025</span>
             </div>
             <div class="node" style="grid-column: 1; grid-row: 7;">
-                <span>врменна корона 36</span>
-                <span>28.03.2025</span>
+                <span class="node-procedure-name">врменна корона 36</span>
+                <span class="node-procedure-date">28.03.2025</span>
             </div>
         </div>
         <div class="procedures-table">
-            <div class="procedure-tab">
-                <div class="procedure-text">Първичен преглед</div>
-                <div class="procedure-text">50лв</div>
+            <!-- Each .procedure-tab now has .main-info and .extra-info sections -->
+            <div class="procedure-tab" onclick="toggleProcedureDetails(this)">
+                <div class="main-info">
+                    <div class="procedure-text">Първичен преглед</div>
+                    <div class="procedure-text">50лв</div>
+                    <div class="procedure-date">01.02.2025</div>
+                </div>
+                <div class="extra-info hidden">
+                    <div>Доктор: Д-р Георгиев</div>
+                    <div>Статус: Завършена</div>
+                    <div>Бележки: Първоначалният преглед установи няколко налични проблема, които бяха дискутирани с
+                        пациента.
+                    </div>
+                </div>
+            </div>
+
+            <div class="procedure-tab" onclick="toggleProcedureDetails(this)">
+                <div class="main-info">
+                    <div class="procedure-text">КОХ почистване</div>
+                    <div class="procedure-text">100лв</div>
+                    <div class="procedure-date">03.02.2025</div>
+                </div>
+                <div class="extra-info hidden">
+                    <div>Доктор: Д-р Георгиев</div>
+                    <div>Статус: Завършена</div>
+                    <div>Бележки: Почистващата процедура премахна зъбен камък и плака.</div>
+                </div>
+            </div>
+
+            <div class="procedure-tab" onclick="toggleProcedureDetails(this)">
+                <div class="main-info">
+                    <div class="procedure-text">Обтурация 14</div>
+                    <div class="procedure-text">150лв</div>
+                    <div class="procedure-date">04.03.2025</div>
+                </div>
+                <div class="extra-info hidden">
+                    <div>Доктор: Д-р Великова</div>
+                    <div>Статус: Завършена</div>
+                    <div>Бележки: Обтурация на кариес на зъб 14.</div>
+                </div>
+            </div>
+
+            <div class="procedure-tab" onclick="toggleProcedureDetails(this)">
+                <div class="main-info">
+                    <div class="procedure-text">Ендо лечение 36</div>
+                    <div class="procedure-text">150лв</div>
+                    <div class="procedure-date">08.03.2025</div>
+                </div>
+                <div class="extra-info hidden">
+                    <div>Доктор: Д-р Николов</div>
+                    <div>Статус: В процес</div>
+                    <div>Бележки: Лечение на кореновите канали на зъб 14.</div>
+                </div>
+            </div>
+
+            <div class="procedure-tab" onclick="toggleProcedureDetails(this)">
+                <div class="main-info">
+                    <div class="procedure-text">Изграждане 36</div>
+                    <div class="procedure-text">100лв</div>
+                    <div class="procedure-date">24.03.2025</div>
+                </div>
+                <div class="extra-info hidden">
+                    <div>Доктор: Д-р Великова</div>
+                    <div>Статус: Завършена</div>
+                    <div>Бележки: Изграждане на структурата на зъб 36 преди поставяне на корона.</div>
+                </div>
+            </div>
+            <div class="procedure-tab" onclick="toggleProcedureDetails(this)">
+                <div class="main-info">
+                    <div class="procedure-text">Временна корона 36</div>
+                    <div class="procedure-text">50лв</div>
+                    <div class="procedure-date">24.03.2025</div>
+                </div>
+                <div class="extra-info hidden">
+                    <div>Доктор: Д-р Великова</div>
+                    <div>Статус: Завършена</div>
+                    <div>Бележки: Изграждане на структурата на зъб 36 преди поставяне на корона.</div>
+                </div>
+            </div>
+            <div class="procedure-tab" onclick="toggleProcedureDetails(this)">
+                <div class="main-info">
+                    <div class="procedure-text">Отпечатъцеи за корона 36</div>
+                    <div class="procedure-text">Не се дължи заплащане</div>
+                    <div class="procedure-date">24.03.2025</div>
+                </div>
+                <div class="extra-info hidden">
+                    <div>Доктор: Д-р Великова</div>
+                    <div>Статус: Завършена</div>
+                    <div>Бележки: Изграждане на структурата на зъб 36 преди поставяне на корона.</div>
+                </div>
+            </div>
+            <div class="procedure-tab" onclick="toggleProcedureDetails(this)">
+                <div class="main-info">
+                    <div class="procedure-text">Постоянна корона 36</div>
+                    <div class="procedure-text">300лв</div>
+                    <div class="procedure-date">24.03.2025</div>
+                </div>
+                <div class="extra-info hidden">
+                    <div>Доктор: Д-р Великова</div>
+                    <div>Статус: Завършена</div>
+                    <div>Бележки: Изграждане на структурата на зъб 36 преди поставяне на корона.</div>
+                </div>
             </div>
             <div class="procedure-tab">
-                <div class="procedure-text">КОХ почистване</div>
-                <div class="procedure-text">100лв</div>
-            </div>
-            <div class="procedure-tab">
-                <div class="procedure-text">Обтурация 14</div>
-                <div class="procedure-text">150lv</div>
-            </div>
-            <div class="procedure-tab">
-                <div class="procedure-text">Ендо лечение 14</div>
-                <div class="procedure-text">150лв</div>
-            </div>
-            <div class="procedure-tab">
-                <div class="procedure-text">Изграждане 36</div>
-                <div class="procedure-text">100лв</div>
-            </div>
-            <div class="procedure-tab">
-                <div class="procedure-text">временна корона 36</div>
-                <div class="procedure-text">50лв</div>
-            </div>
-            <div class="procedure-tab">
-                <div class="procedure-text">отпечатъци 36</div>
-                <div class="procedure-text">не се заплащат отделно</div>
-            </div>
-            <div class="procedure-tab">
-                <div class="procedure-text">постоянна корона 36</div>
-                <div class="procedure-text">300lv</div>
-            </div>
-            <div class="procedure-tab">
-                <div class="procedure-text">Total : <b>900лв</b></div>
+                <div class="main-info">
+                    <div class="procedure-text">Total : <b>900лв</b></div>
+                </div>
             </div>
         </div>
-
-
         <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
         <!--        <script src="doughnut.js" defer></script>-->
         <script src="scripts.js" defer></script>
     </div>
-</div>
 </html>

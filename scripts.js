@@ -9,54 +9,54 @@ function initializeDoughnutChart() {
         data: {
             datasets: [
                 {
-                    data: [
-                        {procedure: 'Първичен Преглед', value: 10},
-                        {procedure: 'КОХ Почистване', value: 10},
-                        {procedure: 'Обтурация 14', value: 20},
-                        {procedure: 'Ендо 36', value: 40},
-                        {procedure: 'Изграждане 36', value: 20}
-                    ], // Values for each section
-                    backgroundColor: ["#56c9ab", "#36a2eb", "#ff6384"], // Colors for the segments
+                    data: [10, 10, 20, 40, 20], // Values for each section
+                    backgroundColor: ["#56c9ab", "#56c9ab", "#56c9ab", "#36a2eb", "#ff6384"], // Colors for the segments
                     label: 'Консервативен етап',
-                    hoverLabels: ["Първичен Преглед", "КОХ Почистване", "Обтурация 14", 'Ендо 36', 'Изграждане 36']                },
+                    hoverLabels: ["Първичен Преглед", "КОХ Почистване", "Обтурация 14", "Ендо 36", "Изграждане 36"],
+                    segmentLabels: ["Завършени", "Завършени", "Завършени", "Настоящ", "Предстоящ"]
+                },
                 {
-                    data: [
-                        {procedure: 'Временна Коронка 36', value: 30},
-                        {procedure: 'Отпечатъци 36', value: 10},
-                        {procedure: 'Постоянна коронка 36', value: 60}
-                    ],
-                    backgroundColor: ["#56c9ab", "#36a2eb", "#ff6384"],
+                    data: [30, 10, 60],
+                    backgroundColor: ["#ff6384", "#ff6384", "#ff6384"],
                     label: 'Протетичен етап',
-                    hoverLabels: ["Completed", "Current", "Upcoming"]
+                    hoverLabels: ["Временна Коронка 36", "Отпечатъци 36", "Постоянна коронка 36"],
+                    segmentLabels: ["Предстоящ", "Предстоящ", "Предстоящ"]
                 }
             ],
-            labels: ["Завършени", "Настоящ", "Предстоящ"]
         },
         options: {
             responsive: true,
-            legend: { position: 'top' },
-            title: {
-                display: true,
-                text: 'Chart.js Doughnut Chart'
+            plugins: {
+                legend: { position: 'top' },
+                title: {
+                    display: true,
+                    text: 'Your Dental Treatment Plan Progress',
+                    color: '#fff',       // Set the title color
+                    font: {
+                        size: 20,           // Set the title font size
+                        family: 'Arial',    // Optionally, set the font family
+                        weight: 'bold'      // Optionally, set the font weight
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: (context) => {
+                            const dataset = context.dataset;
+                            const hoverLabels = dataset.hoverLabels;
+                            const segmentLabels = dataset.segmentLabels;
+                            const labelIndex = context.dataIndex;
+                            const customLabel = `${segmentLabels[labelIndex]}: ${hoverLabels[labelIndex]}`;
+                            return `${dataset.label}: ${customLabel} (${context.raw})`;
+                        }
+                    }
+                }
             },
             animation: {
                 animateScale: true,
                 animateRotate: true
             },
             parsing: {
-                key: 'value',
-            },
-            plugins: {
-                tooltip: {
-                    callbacks: {
-                        label: (context) => {
-                            const dataset = context.dataset;
-                            const hoverLabels = dataset.hoverLabels;
-                            const customLabel = hoverLabels ? hoverLabels[context.dataIndex] : context.label;
-                            return `${dataset.label}: ${customLabel}`;
-                        }
-                    }
-                }
+                key: 'value'
             }
         }
     };
@@ -108,4 +108,16 @@ function initializeDiagram() {
 
     // Additional line connecting Node 3 to Node 5
     drawLine(nodes[2], nodes[4]);
+}
+
+function toggleProcedureDetails(tabElement) {
+    // Toggle the 'expanded' class on the procedure tab
+    tabElement.classList.toggle("expanded");
+
+    // Find the .extra-info element inside the clicked tab
+    const extraInfo = tabElement.querySelector(".extra-info");
+    if (extraInfo) {
+        // Toggle the 'hidden' class to show or hide additional details
+        extraInfo.classList.toggle("hidden");
+    }
 }

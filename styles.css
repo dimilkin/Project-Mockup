@@ -11,7 +11,10 @@ body {
 }
 
 .chart-container {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .diagram-container {
@@ -77,26 +80,53 @@ body {
 .procedure-tab {
     margin: 10px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Stack content vertically */
     position: relative;
     width: 36vw;
     background-color: white;
     color: #4e4e4e;
     z-index: 1;
-    padding: 4px;
+    padding: 10px;
     border-style: solid;
     border-color: goldenrod;
     border-width: 1px;
     border-radius: 12px;
+    transition: all 0.3s ease;
+    overflow: hidden; /* Hide the extra info until expanded */
 }
 
-.procedure-text {
-    margin: 8px;
-    flex: 1; /* Makes all children take equal width */
-    text-align: center; /* Centers the text in each section */
-    padding: 0 5px;
+.procedure-tab.expanded {
+    background-color: #f0f8ff; /* Change background when expanded */
+    border-color: #36a2eb; /* Different border color on expansion */
 }
+
+.main-info{
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.extra-info {
+    display: none; /* Start hidden */
+    flex-direction: column; /* Stack content vertically */
+    position: relative;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e0e7ff;
+    border-top: 1px solid #ccc;
+    border-radius: 0 0 12px 12px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.procedure-tab.expanded .extra-info {
+    display: block; /* Show when expanded */
+}
+
+
 
 @media (max-width: 780px) {
     /* For mobile phones */
@@ -116,6 +146,14 @@ body {
         width: 20vw;
         font-size: 18px;
         max-width: 20vw;
+    }
+
+    .node-procedure-name {
+        display: none;
+    }
+
+    .node-procedure-date {
+        font-size: 12px;
     }
 
     .procedure-tab {
