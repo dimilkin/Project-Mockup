@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: #4e4e4e;
+    background: #ECECEC;
 }
 
 .context-holder {
@@ -23,7 +23,7 @@ body {
     grid-template-rows: repeat(8, 100px);
     gap: 10px;
     position: relative;
-    background: #2e2e2e;
+    background: #8f8f8f;
     width: fit-content;
     border-radius: 20px;
     padding: 12px;
@@ -80,7 +80,7 @@ body {
 .procedure-tab {
     margin: 10px;
     display: flex;
-    flex-direction: column; /* Stack content vertically */
+    flex-direction: column;
     position: relative;
     width: 36vw;
     background-color: white;
@@ -92,15 +92,15 @@ body {
     border-width: 1px;
     border-radius: 12px;
     transition: all 0.3s ease;
-    overflow: hidden; /* Hide the extra info until expanded */
+    overflow: hidden;
 }
 
 .procedure-tab.expanded {
-    background-color: #f0f8ff; /* Change background when expanded */
-    border-color: #36a2eb; /* Different border color on expansion */
+    background-color: #f0f8ff;
+    border-color: #36a2eb;
 }
 
-.main-info{
+.main-info {
     margin: 10px;
     display: flex;
     justify-content: space-between;
@@ -109,23 +109,37 @@ body {
     z-index: 1;
 }
 
+.procedure-text {
+    flex: 1;
+    text-align: center;
+}
+
+.procedure-date {
+    flex: 1;
+    text-align: center;
+}
+
 .extra-info {
-    display: none; /* Start hidden */
-    flex-direction: column; /* Stack content vertically */
+    display: none;
+    flex-direction: column;
     position: relative;
     margin-top: 10px;
     padding: 10px;
-    background-color: #e0e7ff;
-    border-top: 1px solid #ccc;
+    background-color: #fff;
+    border-top: 1px solid #85C8FF;
     border-radius: 0 0 12px 12px;
     font-size: 0.9em;
     color: #333;
 }
 
 .procedure-tab.expanded .extra-info {
-    display: block; /* Show when expanded */
+    display: block;
 }
 
+.procedure-tab.highlighted {
+    background-color: #EBF6FF; /* Light green tint */
+    border-color: #36a2eb; /* Optional: Change border color */
+}
 
 
 @media (max-width: 780px) {

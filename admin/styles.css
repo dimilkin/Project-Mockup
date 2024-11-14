@@ -1,0 +1,362 @@
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+html, body {
+    width: 100%;
+
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Body Customization */
+body {
+    padding: 20px;
+    background-color: #f4f6f8;
+}
+
+/* Container and Sidebar */
+.container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-info {
+    margin-bottom: 20px;
+}
+
+.add-button, .settings-button {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-button:hover, .settings-button:hover {
+    background-color: #2980b9;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Content Area */
+.content {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Table Container */
+.table-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    overflow: visible;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-row {
+    border-bottom: 1px solid #f0f0f0;
+    /*background: white !important;*/
+
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Table Header */
+.table-container th {
+    padding: 15px;
+    background-color: #fafafa;
+    color: #666;
+    font-weight: bold;
+    text-align: left;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+/* Table Rows */
+.table-container td {
+    padding: 15px;
+    font-size: 0.95em;
+    color: #555;
+    /*border-bottom: 1px solid #f0f0f0;*/
+}
+
+.table-container tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table-container tbody tr:nth-child(odd) {
+    background-color: #FFF;
+}
+
+/* Status Styling */
+.status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+}
+
+.status.ready {
+    background-color: #4CAF50;
+}
+
+.status.progress {
+    background-color: cornflowerblue;
+}
+
+.status.stopped {
+    background-color: #FF5722;
+}
+
+/* Actions Styling */
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    color: #777;
+}
+
+.actions .material-symbols-outlined {
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.actions .material-symbols-outlined:hover {
+    color: #333;
+}
+
+/* Details Row */
+.details-row {
+    display: none;
+    background-color: #EEF6FC;
+}
+
+.details-row .additional-info {
+    padding: 15px;
+    font-size: 0.9em;
+    color: #333;
+    line-height: 1.5;
+    border-bottom-color: #022b46;
+    border-bottom-width: 4px;
+}
+
+/* Procedure Checkboxes */
+.procedure-checkboxes {
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2px;
+}
+
+.procedure-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.procedure-checkbox.complete input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    accent-color: #4CAF50;
+    cursor: pointer;
+}
+
+.procedure-checkbox.progress input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    accent-color: cornflowerblue;
+    cursor: pointer;
+}
+
+.procedure-checkbox.planned input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    accent-color: #e74c3c;
+    cursor: pointer;
+}
+
+.procedure-checkbox.complete:hover .checkbox-label-text {
+    color: #4CAF50;
+}
+
+.procedure-checkbox.progress:hover .checkbox-label-text {
+    color: cornflowerblue;
+}
+
+.procedure-checkbox.planned:hover .checkbox-label-text {
+    color: #e74c3c;
+}
+
+.checkbox-label-text {
+    font-size: 1em;
+    font-weight: 500;
+    color: #4e4e4e;
+    transition: color 0.3s;
+}
+
+/* Info Checkbox */
+.info-checkbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    margin: 8px 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.info-checkbox:hover {
+    background-color: whitesmoke;
+}
+
+/* Progress Bar Styles */
+.w3-light-grey {
+    background-color: #e0e0e0;
+}
+
+.w3-container {
+    text-align: center;
+    color: #fff;
+}
+
+
+/* Styling the dropdown */
+.styled-dropdown {
+    appearance: none; /* Remove default browser styling */
+    background-color: #fafafa; /* Soft, off-white background */
+    color: #333; /* Dark, refined text color */
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 6px 8px;
+    border: 1px solid #dcdcdc; /* Soft gray border */
+    border-radius: 8px; /* Smooth, rounded corners */
+    width: 100%;
+    max-width: 200px;
+    min-width: 150px;
+    text-align-last: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Soft outer shadow */
+    position: relative;
+}
+
+
+.styled-dropdown:hover {
+    background-color: #fff;
+    border-color: #4e4e4e;
+}
+
+.styled-dropdown::after {
+    content: '▼';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 0.8em;
+    pointer-events: none;
+}
+
+.styled-dropdown:focus {
+    outline: none;
+    border-color: cornflowerblue; /* Subtle, luxurious gold */
+    box-shadow: 0 0 0 3px rgba(178, 153, 110, 0.4); /* Elegant gold focus ring */
+}
+
+/* Option styling (for Chrome alignment fix) */
+.styled-dropdown option {
+    background-color: #fafafa;
+    color: #333;
+    text-align: center;
+}
+
+
+table .highlighted {
+
+    border-top: 1px solid cornflowerblue;
+    background-color: #EEF6FC !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .table-container th, .table-container td {
+        padding: 12px;
+    }
+
+    .status {
+        font-size: 0.8em;
+        padding: 4px 8px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    table th, table td {
+        font-size: 0.85em;
+        padding: 8px;
+    }
+
+    .add-button, .settings-button {
+        width: 100%;
+        padding: 12px;
+    }
+}

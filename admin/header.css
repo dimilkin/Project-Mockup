@@ -1,0 +1,95 @@
+.header-section {
+    font-family: Arial, sans-serif;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #3498db 50%, #fff 50%);
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2px;
+
+}
+
+.header-text span {
+    font-size: 24px;
+    color: #fff;
+}
+
+#add-button {
+    padding: 8px 15px;
+    background-color: #fff;
+    color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+#add-button:hover {
+    background-color: palevioletred;
+    color: #FFF;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center the cards horizontally */
+}
+
+.card {
+    background-color: white;
+    width: 220px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h3 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.card .stats {
+    margin-top: 15px;
+}
+
+.card .stats p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 16px;
+}
+
+.card .stats .total {
+    font-weight: bold;
+    color: #333;
+}
+
+.card .stats .planned {
+    font-weight: bold;
+    color: #e74c3c; /* Green for active count */
+}
+
+.card .stats .active {
+    font-weight: bold;
+    color: #3498db; /* Green for active count */
+}
+
+.card .stats .completed {
+    font-weight: bold;
+    color: #4caf50; /* Green for active count */
+}

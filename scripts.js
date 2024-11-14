@@ -10,7 +10,7 @@ function initializeDoughnutChart() {
             datasets: [
                 {
                     data: [10, 10, 20, 40, 20], // Values for each section
-                    backgroundColor: ["#56c9ab", "#56c9ab", "#56c9ab", "#36a2eb", "#ff6384"], // Colors for the segments
+                    backgroundColor: ["#56c9ab", "#56c9ab", "#56c9ab", "#5098F7", "#ff6384"], // Colors for the segments
                     label: 'Консервативен етап',
                     hoverLabels: ["Първичен Преглед", "КОХ Почистване", "Обтурация 14", "Ендо 36", "Изграждане 36"],
                     segmentLabels: ["Завършени", "Завършени", "Завършени", "Настоящ", "Предстоящ"]
@@ -31,7 +31,7 @@ function initializeDoughnutChart() {
                 title: {
                     display: true,
                     text: 'Your Dental Treatment Plan Progress',
-                    color: '#fff',       // Set the title color
+                    color: '#181818',       // Set the title color
                     font: {
                         size: 20,           // Set the title font size
                         family: 'Arial',    // Optionally, set the font family
@@ -111,6 +111,13 @@ function initializeDiagram() {
 }
 
 function toggleProcedureDetails(tabElement) {
+    // Remove 'highlighted' class from all procedure tabs
+    const allTabs = document.querySelectorAll('.procedure-tab');
+    allTabs.forEach(tab => tab.classList.remove('highlighted'));
+
+    // Add 'highlighted' class to the clicked tab
+    tabElement.classList.add('highlighted');
+
     // Toggle the 'expanded' class on the procedure tab
     tabElement.classList.toggle("expanded");
 
@@ -121,3 +128,23 @@ function toggleProcedureDetails(tabElement) {
         extraInfo.classList.toggle("hidden");
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const nodes = document.querySelectorAll('.node');
+    nodes.forEach((node, index) => {
+        node.addEventListener('click', function() {
+            const procedureTab = document.getElementById(`procedure-${index + 1}`);
+            if (procedureTab) {
+                // Remove 'highlighted' class from all procedure tabs
+                const allTabs = document.querySelectorAll('.procedure-tab');
+                allTabs.forEach(tab => tab.classList.remove('highlighted'));
+
+                // Add 'highlighted' class to the clicked tab
+                procedureTab.classList.add('highlighted');
+
+                // Scroll to the clicked tab
+                procedureTab.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+});

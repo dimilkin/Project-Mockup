@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <div class="admin-info">
+            <h2>Admin: John Doe</h2>
+        </div>
+        <button class="add-button" id="addNewBtn">Doctors</button>
+        <button class="add-button">Patients</button>
+        <input type="text" placeholder="Search..." id="searchField"/>
+        <button class="settings-button">Settings</button>
+    </aside>
+
+    <main class="content">
+
+        <div class="header-section">
+
+            <div class="header-text">
+                <span>Available Plans</span>
+                <button id="add-button">Add New</button>
+            </div>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Planned</h3>
+                    <div class="stats">
+                        <p class="total">128 total</p>
+                        <p class="planned">25 To Start</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>In Progress</h3>
+                    <div class="stats">
+                        <p class="total">128 total</p>
+                        <p class="active">32 Active</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Completed</h3>
+                    <div class="stats">
+                        <p class="total">128 total</p>
+                        <p class="completed">71 Completed</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Progress</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="table-row" onclick="toggleDetails(this)">
+                    <td>John Doe</td>
+                    <td><span class="status ready">Completed</span></td>
+                    <td>2024-11-12</td>
+                    <td>
+                        <div class="w3-white w3-tiny w3-round-large w3-border w3-border-blue">
+                            <div class="w3-container w3-tiny w3-blue w3-round-large" style="width:100%">100%</div>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <span class="material-symbols-outlined">delete</span>
+                        <span class="material-symbols-outlined">settings_applications</span>
+                    </td>
+                <tr class="details-row">
+                    <td colspan="5">
+                        <div class="additional-info">
+                            <div class="info-checkbox">
+                                <span>Approve for next phase</span>
+                                <div class="procedure-checkboxes">
+                                    <select name="approval" class="styled-dropdown">
+                                        <option value="planned">Planned</option>
+                                        <option value="in-progress">In Progress</option>
+                                        <option value="complete">Complete</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="info-checkbox">
+                                <span>Approve for next phase</span>
+                                <div class="procedure-checkboxes">
+                                    <select name="approval" class="styled-dropdown">
+                                        <option value="planned">Planned</option>
+                                        <option value="in-progress">In Progress</option>
+                                        <option value="complete">Complete</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="info-checkbox">
+                                <span>Approve for next phase</span>
+                                <div class="procedure-checkboxes">
+                                    <select name="approval" class="styled-dropdown">
+                                        <option value="planned">Planned</option>
+                                        <option value="in-progress">In Progress</option>
+                                        <option value="complete">Complete</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="info-checkbox">
+                                <span>Approve for next phase</span>
+                                <div class="procedure-checkboxes">
+                                    <select name="approval" class="styled-dropdown">
+                                        <option value="planned">Planned</option>
+                                        <option value="in-progress">In Progress</option>
+                                        <option value="complete">Complete</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr class="table-row" onclick="toggleDetails(this)">
+                    <td>John Doe</td>
+                    <td><span class="status progress">In progress</span></td>
+                    <td>2024-11-12</td>
+                    <td>
+                        <div class="w3-white w3-tiny w3-round-large w3-border w3-border-blue">
+                            <div class="w3-container w3-tiny w3-blue w3-round-large" style="width:50%">50%</div>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <span class="material-symbols-outlined">delete</span>
+                        <span class="material-symbols-outlined">settings_applications</span>
+                    </td>
+                <tr class="details-row">
+                    <td colspan="5">
+                        <div class="additional-info">
+                            <div class="info-checkbox">
+                                <span>Approve for next phase</span>
+                                <div class="procedure-checkboxes">
+                                    <select name="approval" class="styled-dropdown">
+                                        <option value="planned">Planned</option>
+                                        <option value="in-progress">In Progress</option>
+                                        <option value="complete">Complete</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="info-checkbox">
+                                <span>Approve for next phase</span>
+                                <div class="procedure-checkboxes">
+                                    <select name="approval" class="styled-dropdown">
+                                        <option value="planned">Planned</option>
+                                        <option value="in-progress">In Progress</option>
+                                        <option value="complete">Complete</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="info-checkbox">
+                                <span>Approve for next phase</span>
+                                <div class="procedure-checkboxes">
+                                    <select name="approval" class="styled-dropdown">
+                                        <option value="planned">Planned</option>
+                                        <option value="in-progress">In Progress</option>
+                                        <option value="complete">Complete</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="table-row" onclick="toggleDetails(this)">
+                    <td>Jane Smith</td>
+                    <td><span class="status stopped">Planned</span></td>
+                    <td>2024-11-11</td>
+                    <td>
+                        <div class="w3-white w3-tiny w3-round-large w3-border w3-border-blue">
+                            <div class="w3-container w3-tiny w3-blue w3-round-large" style="width:10%">10%</div>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <span class="material-symbols-outlined">delete</span>
+                        <span class="material-symbols-outlined">settings_applications</span>
+                    </td>
+                <tr class="details-row">
+                    <td colspan="5">
+                        <div class="additional-info">
+                            <div class="info-checkbox">
+                                <span>Approve for next phase</span>
+                                <div class="procedure-checkboxes">
+                                    <select name="approval" class="styled-dropdown">
+                                        <option value="planned">Planned</option>
+                                        <option value="in-progress">In Progress</option>
+                                        <option value="complete">Complete</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
