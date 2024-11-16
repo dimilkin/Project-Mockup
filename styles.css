@@ -1,20 +1,36 @@
+:root {
+    --primary-dark: #2A3132;
+    --primary-grey: #4e4e4e;
+    --primary-blue: #3498db;
+    --primary-gold: #daa520;
+}
+
 body {
     margin: 0;
-    background: #ECECEC;
+    background: #fff;
 }
 
 .context-holder {
     margin: 0 auto;
     width: fit-content;
     align-content: center;
+    display: flex;
+    flex-direction: column; /* Arrange children in a vertical column */
     align-items: center;
 }
 
+.user-info {
+    display: flex;
+    padding: 12px;
+    border-style: solid;
+    border-color: #6f6f6f;
+    border-radius: 12px;
+    width: fit-content;
+    margin: 3rem;
+}
+
 .chart-container {
-    margin-bottom: 20px;
-    margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    width: 30vw;
 }
 
 .diagram-container {
@@ -23,7 +39,7 @@ body {
     grid-template-rows: repeat(8, 100px);
     gap: 10px;
     position: relative;
-    background: #8f8f8f;
+    background: var(--primary-dark);
     width: fit-content;
     border-radius: 20px;
     padding: 12px;
@@ -49,12 +65,12 @@ body {
     width: 10vw;
     height: fit-content;
     background-color: white;
-    color: #4e4e4e;
+    color: var(--primary-grey);
     margin: auto;
     z-index: 1;
     padding: 8px;
     border-style: solid;
-    border-color: goldenrod;
+    border-color: var(--primary-gold);
     border-width: 2px;
     border-radius: 12px;
     align-content: center;
@@ -77,27 +93,56 @@ body {
     top: -15px;
 }
 
+.procedures-header {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2A3132;
+    margin: 10px;
+    border-bottom: 1px solid #2A3132;
+}
+
+.procedures-header.diagram {
+    width: 100%;
+}
+
 .procedure-tab {
     margin: 10px;
     display: flex;
     flex-direction: column;
     position: relative;
     width: 36vw;
-    background-color: white;
-    color: #4e4e4e;
+    background-color: var(--primary-dark);
+    color: #fff;
     z-index: 1;
     padding: 10px;
     border-style: solid;
-    border-color: goldenrod;
+    border-color: var(--primary-gold);;
     border-width: 1px;
     border-radius: 12px;
     transition: all 0.3s ease;
     overflow: hidden;
 }
 
+.procedure-tab:hover {
+    background-color: #f0f0f0;
+    color: var(--primary-dark);
+}
+
 .procedure-tab.expanded {
     background-color: #f0f8ff;
-    border-color: #36a2eb;
+    border-color: var(--primary-grey);
+    color: var(--primary-dark);
+}
+
+.procedure-tab.expanded .extra-info {
+    display: block;
+}
+
+.procedure-tab.highlighted {
+    background-color: #fff; /* Light green tint */
+    color: var(--primary-dark);
+    border-color: #36a2eb; /* Optional: Change border color */
 }
 
 .main-info {
@@ -132,15 +177,20 @@ body {
     color: #333;
 }
 
-.procedure-tab.expanded .extra-info {
-    display: block;
+.save-to-pdf-button, .settings-button {
+    padding: 8px 15px;
+    background-color: #fff;
+    color: #763626;
+    border-width: 2px;
+    border-radius: 8px;
+    border-color: #763626;
+    cursor: pointer;
 }
 
-.procedure-tab.highlighted {
-    background-color: #EBF6FF; /* Light green tint */
-    border-color: #36a2eb; /* Optional: Change border color */
+.save-to-pdf-button:hover, .settings-button:hover {
+    background-color: palevioletred;
+    color: #FFF;
 }
-
 
 @media (max-width: 780px) {
     /* For mobile phones */
@@ -177,12 +227,9 @@ body {
         align-items: center;
         position: relative;
         width: 90%;
-        background-color: white;
-        color: #4e4e4e;
         z-index: 1;
         padding: 4px;
         border-style: solid;
-        border-color: goldenrod;
         border-width: 1px;
         border-radius: 12px;
     }

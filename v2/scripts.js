@@ -138,7 +138,6 @@ function initializeDiagram() {
     drawLine(nodes[5], nodes[6]);
     drawLine(nodes[6], nodes[7]);
 
-    // Additional line connecting Node 3 to Node 5
     drawLine(nodes[2], nodes[4]);
 }
 

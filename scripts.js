@@ -4,6 +4,28 @@ window.onload = function() {
 };
 
 function initializeDoughnutChart() {
+    const img = new Image();
+    img.src = 'https://png.pngtree.com/png-vector/20230131/ourmid/pngtree-health-logo-vector-illustration-png-image_6580780.png'; // Replace with your image URL
+
+    // Register a plugin to draw the image as a background layer
+    const backgroundImagePlugin = {
+        id: 'backgroundImage',
+        beforeDatasetDraw(chart) {
+            if (chart.config.type === 'doughnut' && img.complete) {
+                const ctx = chart.ctx;
+                const centerX = chart.chartArea.left + (chart.chartArea.right - chart.chartArea.left) / 2;
+                const centerY = chart.chartArea.top + (chart.chartArea.bottom - chart.chartArea.top) / 2;
+                const imageSize = 100;
+
+                // Draw the image at the center before datasets are drawn
+                ctx.drawImage(img, centerX - imageSize / 2, centerY - imageSize / 2, imageSize, imageSize);
+            }
+        }
+    };
+
+    // Register the plugin
+    Chart.register(backgroundImagePlugin);
+
     const config = {
         type: 'doughnut',
         data: {
@@ -102,11 +124,10 @@ function initializeDiagram() {
     drawLine(nodes[0], nodes[1]);
     drawLine(nodes[1], nodes[2]);
     drawLine(nodes[3], nodes[4]);
+    drawLine(nodes[4], nodes[5]);
     drawLine(nodes[5], nodes[6]);
-    drawLine(nodes[5], nodes[7]);
-    drawLine(nodes[4], nodes[7]);
+    drawLine(nodes[6], nodes[7]);
 
-    // Additional line connecting Node 3 to Node 5
     drawLine(nodes[2], nodes[4]);
 }
 
