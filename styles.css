@@ -86,6 +86,7 @@ body {
     top: 0;
     left: 0;
     z-index: 0;
+    max-width: 95vw;
 }
 
 .node-content {
@@ -178,6 +179,7 @@ body {
 }
 
 .save-to-pdf-button, .settings-button {
+    margin: 0 auto;
     padding: 8px 15px;
     background-color: #fff;
     color: #763626;
@@ -193,17 +195,23 @@ body {
 }
 
 @media (max-width: 780px) {
-    /* For mobile phones */
+    .chart-container {
+        width: 90vw;
+    }
+
+    .context-holder {
+        margin: 0 auto;
+        width: 95vw;
+    }
     .diagram-container {
-        grid-template-columns: repeat(3, 30vw); /* Single column */
-        grid-template-rows: repeat(8, 80px); /* Stack nodes vertically */
-        gap: 20px;
-        width: 98vw; /* Full width for small screens */
+        grid-template-columns: repeat(3, 30vw);
+        grid-template-rows: repeat(8, 80px);
+        width: 91vw;
         align-items: baseline;
     }
 
     .header {
-        font-size: 14px; /* Smaller font for headers */
+        font-size: 14px;
     }
 
     .node {
